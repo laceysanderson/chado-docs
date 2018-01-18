@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{#table}}{{table.name}} - {{/table}}{{databaseName}} Module</title>
+  <title>{{#table}}{{table.name}} - {{/table}} Chado</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="icon" type="image/png" sizes="16x16" href="../{{rootPath}}favicon.ico">
@@ -32,7 +32,7 @@
   <!-- SchemaSpy -->
   <link rel="stylesheet" href="{{rootPath}}schemaSpy.css">
   <!-- GMOD Chado Specific CSS -->
-  <link rel="stylesheet" href="../{{rootPath}}main.css">
+  <link rel="stylesheet" href="{{rootPath}}main.css">
   
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,8 +49,8 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="../{{rootPathtoHome}}index.html" class="navbar-brand" style="padding:0;">
-            <img src="../{{rootPath}}GMOD-cogs.png" class="gmod-logo" />
+          <a href="{{rootPathtoHome}}index.html" class="navbar-brand" style="padding:0;">
+            <img src="{{rootPath}}GMOD-cogs.png" class="gmod-logo" />
             <span class="gmod-title">Chado</span>
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -62,33 +62,18 @@
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
           <ul class="nav navbar-nav">
             <li>
-              <a href="../{{rootPath}}index.html" title="All Chado Tables.">
+              <a href="{{rootPath}}index.html" title="All Chado Tables.">
+                Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{rootPath}}index.html" title="All Chado Tables.">
                 All Tables</span>
               </a>
             </li>
             <li>
-              <a href="../{{rootPath}}constraints.html" title="All Constraints in Chado.">
+              <a href="{{rootPath}}constraints.html" title="All Constraints in Chado.">
                 All Constraints
-              </a>
-            </li>
-            <li>
-              <a href="{{rootPath}}index.html" title="Tables in this module.">
-                Module Tables <span class="sr-only">(current)</span>
-              </a>
-            </li>            
-            <li>
-              <a href="{{rootPath}}columns.html" title="Columns in this module.">
-                Module Columns
-              </a>
-            </li>
-            <li>
-              <a href="{{rootPath}}constraints.html" title="Constraints defined by this module.">
-                Module Constraints
-              </a>
-            </li>
-            <li>
-              <a href="{{rootPath}}relationships.html" title="Diagram of table relationships">
-                Module Relationships
               </a>
             </li>
           </ul>
@@ -106,8 +91,7 @@
     
     <div class="box box-solid">
       <div class="box-body">
-        <p><span class="version-label">Schema Version:</span> 1.3 
-          <span class="version-label">Module</span>: {{databaseName}}</p>
+        <p><span class="version-label">Schema Version:</span> 1.3</p>
       </div>
     </div>
 		

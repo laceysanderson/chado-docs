@@ -1,0 +1,202 @@
+
+      <!-- Main content -->
+      <section class="content">
+		<div class="row">
+		  <div class="col-md-3 col-sm-6 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-aqua"><i class="fa fa-table"></i></span>
+				  <div class="info-box-content">
+					  <span class="info-box-text">TABLES</span>
+					  <span class="info-box-number">{{tablesAmount}}</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+		  </div>
+		  <!-- /.col -->
+		  <div class="col-md-3 col-sm-6 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-red"><i class="fa fa-table"></i></span>
+				  <div class="info-box-content">
+					  <span class="info-box-text">VIEWS</span>
+					  <span class="info-box-number">{{viewsAmount}}</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+		  </div>
+		  <!-- /.col -->
+
+		  <!-- fix for small devices only -->
+		  <div class="clearfix visible-sm-block"></div>
+
+		  <div class="col-md-3 col-sm-6 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-green"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></span>
+
+				  <div class="info-box-content">
+					  <span class="info-box-text">COLUMNS</span>
+					  <span class="info-box-number">{{columnsAmount}}</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+		  </div>
+		  <!-- /.col -->
+		  <div class="col-md-3 col-sm-6 col-xs-12">
+			  <div class="info-box">
+				  <span class="info-box-icon bg-yellow"><i class="ion ion-key"></i></span>
+
+				  <div class="info-box-content">
+					  <span class="info-box-text">Constraints</span>
+					  <span class="info-box-number">{{constraintsAmount}}</span>
+				  </div>
+				  <!-- /.info-box-content -->
+			  </div>
+			  <!-- /.info-box -->
+		  </div>
+		  <!-- /.col -->
+		</div>
+
+		<div class="box box-primary">
+	       <div class="box-header with-border">
+	         <h3 class="box-title">Chado</h3>
+	         <span class="label label-primary pull-right"><i class="fa fa-cog fa-2x"></i></span>
+	     
+	       </div><!-- /.box-header -->
+	       <div class="box-body">
+	         <p>Chado is a modular schema for handling all kinds of biological data. It is intended to be used as both a primary datastore schema as well as a warehouse-style schema.</p>
+			<p>Chado was originally conceived as the next generation Flybase database, combining the sequence annotation database gadfly with the Harvard and Cambridge databases. We have avoided organism or project specificity in the schema, and we hope it will be of use to other projects.</p>
+	       </div><!-- /.box-body -->
+		</div>
+
+		<div class="box box-primary">
+	       <div class="box-header with-border">
+	         <h3 class="box-title">Modules</h3>
+	         <span class="label label-primary pull-right"><i class="fa fa-cog fa-2x"></i></span>
+	     
+	       </div><!-- /.box-header -->
+	       <div class="box-body">
+			<p>The modules currently in chado are:</p>
+			<table>
+			<thead>
+				<tr>
+				<th>Module</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<td>Audit</td>
+				<td>database audits</td>
+				</tr>
+				<tr>
+				<td><a href="companalysis/index.html">Companalysis</a></td>
+				<td>data from computational analysis</td>
+				</tr>
+				<tr>
+				<td><a href="contact/index.html">Contact</a></td>
+				<td>people and groups</td>
+				</tr>
+				<tr>
+				<td><a href="db/index.html">Database (db)</a></td>
+				<td>references to external databases</td>
+				</tr>
+				<tr>
+				<td><a href="cv/index.html">Controlled Vocabulary (cv)</a></td>
+				<td>controlled vocabularies and ontologies</td>
+				</tr>
+				<tr>
+				<td><a href="expression/index.html">Expression</a></td>
+				<td>summarized RNA and protein expresssion</td>
+				</tr>
+				<tr>
+				<td><a href="general/index.html">General</a></td>
+				<td>identifiers</td>
+				</tr>
+				<tr>
+				<td><a href="genetic/index.html">Genetic</a></td>
+				<td>genetic data and genotypes</td>
+				</tr>
+				<tr>
+				<td><a href="library/index.html">Library</a></td>
+				<td>descriptions of molecular libraries</td>
+				</tr>
+				<tr>
+				<td><a href="mage/index.html">Mage</a></td>
+				<td>microarray data</td>
+				</tr>
+				<tr>
+				<td><a href="map/index.html">Map</a></td>
+				<td>maps without sequence</td>
+				</tr>
+				<tr>
+				<td><a href="organism/index.html">Organism</a></td>
+				<td>species</td>
+				</tr>
+				<tr>
+				<td><a href="phenotype/index.html">Phenotype</a></td>
+				<td>phenotypic data</td>
+				</tr>
+				<tr>
+				<td><a href="phylogeny/index.html">Phylogeny</a></td>
+				<td>phylogenetic trees</td>
+				</tr>
+				<tr>
+				<td><a href="pub/index.html">Publication (pub)</a></td>
+				<td>publications and references</td>
+				</tr>
+				<tr>
+				<td><a href="sequence/index.html">Sequence</a></td>
+				<td>sequences and sequence features</td>
+				</tr>
+				<tr>
+				<td><a href="stock/index.html">Stock</a></td>
+				<td>specimens and biological collections</td>
+				</tr>
+				<tr>
+				<td>WWW</td>
+				<td>generic classes for web interfaces</td>
+				</tr>
+			</tbody></table>
+	       </div><!-- /.box-body -->
+		</div>
+
+		<div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tables</h3>			  
+			  <span class="label label-primary pull-right"><i class="fa fa-database fa-2x"></i></span>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+            <table id="database_objects" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+					<tr>
+					  <th valign="bottom">Table / View</th>
+					  <th align="right" valign="bottom">Referenced</th>
+					  <th align="right" valign="bottom">Foreign Keys</th>
+					  <th align="right" valign="bottom">Columns</th>
+					  <th align="right" valign="bottom">Type</th>
+					  <th class="toggle">Comments</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#tables}}
+				 <tr class="tbl even" valign="top">  <td class="detail"><a href="tables/{{table.name}}.html">{{table.name}}</a></td>
+				  <td class="detail" align="right">{{table.maxChildren}}</td>
+				  <td class="detail" align="right">{{table.maxParents}}</td>
+				  <td class="detail" align="right">{{table.columns.size}}</td>
+				  <td class="detail" align="right">{{table.type}}</td>
+				  <td class="comment detail" style="display: table-cell;">{{{comments}}}</td>
+				  </tr>
+				{{/tables}}				  
+			</table>
+            </div>
+            <!-- /.box-body -->
+          </div>			
+      </section>
+      <!-- /.content -->
+	  <script>
+          var config = {
+	          pagination: {{paginationEnabled}}
+          }
+	  </script>

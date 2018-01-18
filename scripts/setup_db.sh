@@ -28,10 +28,6 @@ OutDir="/home/ubuntu/workspace/chado-docs"
 echo "SETUP THE DATABASE"
 for i in {1..30}; do echo -n "="; done; echo ""
 
-## List of chado modules. Order is Very important since this is the order SQL
-## will be loaded in and chado is a complex web of dependencies ;-p.
-modules=(general db cv contact pub organism sequence companalysis phenotype genetic map phylogeny expression library stock project mage cell_line natural_diversity)
-
 ## Connection string for psql not including the database. 
 connectionString=""
 echo "Connection String: psql $connectionString"
@@ -42,6 +38,18 @@ echo "Refresh the database..."
 for i in {1..30}; do echo -n "-"; done; echo ""
 psql $connectionString -c "DROP DATABASE $DB"
 psql $connectionString -c "CREATE DATABASE $DB WITH OWNER $DBUSER"
+
+## First load the full schema into a "Chado" schema 
+## for use when generating the full documentation.
+echo ""
+echo "Create the full 'Chado' schema..."
+for i in {1..30}; do echo -n "-"; done; echo ""
+psql $connectionString --db $DB -c "CREATE SCHEMA chado;"
+psql "dbname=$DB options=--search_path=chado" < $ChadoRepo/chado/schemas/1.31/default_schema.sql
+
+## List of chado modules. Order is Very important since this is the order SQL
+## will be loaded in and chado is a complex web of dependencies ;-p.
+modules=(general db cv contact pub organism sequence companalysis phenotype genetic map phylogeny expression library stock project mage cell_line natural_diversity)
 
 ## Create schemas for each module.
 echo ""

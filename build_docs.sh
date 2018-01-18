@@ -25,17 +25,19 @@ templateDir="/home/ubuntu/workspace/schemaspy/src/main/resources/layout"
 
 
 ## Setup the Database
-## ./scripts/setup_db.sh
-
-## Generate Docs for each module.
-##=================
-modules=(general db)
-## cv contact pub organism sequence companalysis phenotype genetic map phylogeny expression library stock project mage cell_line natural_diversity)
+./scripts/setup_db.sh
 
 ## Create the output directory.
 mkdir $outDir
-
 cp ./src/* $outDir/
+
+## Main Docs for all tables.
+##=================
+java -jar $SchemeSpyJar -t pgsql -dp $PsqlDriverJar -db $DB -u $DBUSER -p $DBPASS -hostOptionalPort localhost -template ./main_template -o $outDir -s chado
+    
+## Generate Docs for each module.
+##=================
+modules=(general db cv contact pub organism sequence companalysis phenotype genetic map phylogeny expression library stock project mage cell_line natural_diversity)
 
 ## For each module.
 for module in "${modules[@]}"; do
