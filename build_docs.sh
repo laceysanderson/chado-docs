@@ -29,10 +29,13 @@ templateDir="/home/ubuntu/workspace/schemaspy/src/main/resources/layout"
 
 ## Generate Docs for each module.
 ##=================
-modules=(general db cv contact pub organism sequence companalysis phenotype genetic map phylogeny expression library stock project mage cell_line natural_diversity)
+modules=(general db)
+## cv contact pub organism sequence companalysis phenotype genetic map phylogeny expression library stock project mage cell_line natural_diversity)
 
 ## Create the output directory.
 mkdir $outDir
+
+cp ./src/* $outDir/
 
 ## For each module.
 for module in "${modules[@]}"; do
@@ -41,5 +44,5 @@ for module in "${modules[@]}"; do
     mkdir "$outDir/$module"
     
     ## Generate the module-specific docs
-    java -jar $SchemeSpyJar -t pgsql -dp $PsqlDriverJar -db $DB -u $DBUSER -p $DBPASS -hostOptionalPort localhost -o $outDir/$module -s $module
+    java -jar $SchemeSpyJar -t pgsql -dp $PsqlDriverJar -db $DB -u $DBUSER -p $DBPASS -hostOptionalPort localhost -template ./module_template -o $outDir/$module -s $module
 done
