@@ -5,22 +5,51 @@
 ## Requirements:
 ##  1. Database user should have the ability to create databases.
 ##  2. SchemaSpy & PostgreSQL driver jars must be available.
+##  3. Java 8 & GraphViz must be installed.
+##
+## Parameters (ALL REQUIRED):
+##  d: The name of the database to create.
+##  u: The name of the database user to own the database. 
+##       This user should already exist and be able to create databases.
+##  p: The password for the specified database user.
+##  s: The full path to the SchemaSpy JAR
+##  g: The full path to the PostgreSQL driver for Java 8.
+
 
 #######################################
 ## Parameters
 #######################################
 
-##  - Database connection details (should already exist).
-DB="chado"
-DBUSER="chado"
-DBPASS="chado"
-##  - Absolute path to jars.
-SchemeSpyJar="/home/ubuntu/workspace/schemaspy-6.0.0-rc2.jar"
-PsqlDriverJar="/home/ubuntu/workspace/postgresql-42.1.4.jar"
-##  - Absolute path to cloned Chado repository.
-ChadoRepo="/home/ubuntu/workspace/Chado"
-##  - Absolute path to generate the documantation at.
-outDir="/home/ubuntu/workspace/Chado/docs"
+while getopts d:u:p:s:g: option
+do
+ case "${option}"
+ in
+ ## Database connection details.
+ ## user should already exist & be able to create databases.
+ d) DB=${OPTARG};;
+ u) DBUSER=${OPTARG};;
+ p) DBPASS=${OPTARG};;
+ ## Absolute path to jars.
+ s) SchemeSpyJar=${OPTARG};;
+ g) PsqlDriverJar=${OPTARG};;
+ esac
+done
+
+echo ""
+echo "Connection Details:"
+echo "  - Database $DB"
+echo "  - User: $DBUSER"
+echo "  - User Password: $DBPASS"
+echo "JARs:"
+echo "  - SchemaSpy: $SchemeSpyJar"
+echo "  - PostgreSQL Driver: $PsqlDriverJar"
+
+exit;
+
+##  - Path to generate the documantation at.
+##    Currently assumes you would like the documentation to be build in the 
+##    this repository.
+outDir="../"
 
 ## List of chado modules. Order is Very important since this is the order SQL
 ## will be loaded in and chado is a complex web of dependencies ;-p.
