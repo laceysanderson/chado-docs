@@ -32,6 +32,8 @@ do
  ## Absolute path to jars.
  s) SchemeSpyJar=${OPTARG};;
  g) PsqlDriverJar=${OPTARG};;
+ ## Absolute path to Chado repo.
+ c) ChadoRepo=${OPTARG};;
  esac
 done
 
@@ -43,6 +45,8 @@ echo "  - User Password: $DBPASS"
 echo "JARs:"
 echo "  - SchemaSpy: $SchemeSpyJar"
 echo "  - PostgreSQL Driver: $PsqlDriverJar"
+echo "Chado Repository:"
+echo "  $ChadoRepo"
 
 ##  - Path to generate the documantation at.
 ##    Currently assumes you would like the documentation to be build in the 
@@ -144,7 +148,7 @@ for i in {1..30}; do echo -n "="; done; echo ""
 mkdir -p $outDir
 
 ## Transfer in the main SQL, images, etc.
-cp ./src/* $outDir/
+cp ./build/src/* $outDir/
 
 ##=====================================
 ## Generate the Main Docs for all tables.
