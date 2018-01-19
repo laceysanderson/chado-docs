@@ -44,8 +44,6 @@ echo "JARs:"
 echo "  - SchemaSpy: $SchemeSpyJar"
 echo "  - PostgreSQL Driver: $PsqlDriverJar"
 
-exit;
-
 ##  - Path to generate the documantation at.
 ##    Currently assumes you would like the documentation to be build in the 
 ##    this repository.
