@@ -20,7 +20,7 @@
 ## Parameters
 #######################################
 
-while getopts d:u:p:s:g: option
+while getopts d:u:p:s:g:c: option
 do
  case "${option}"
  in
@@ -51,7 +51,7 @@ echo "  $ChadoRepo"
 ##  - Path to generate the documantation at.
 ##    Currently assumes you would like the documentation to be build in the 
 ##    this repository.
-outDir="../"
+outDir="./"
 
 ## List of chado modules. Order is Very important since this is the order SQL
 ## will be loaded in and chado is a complex web of dependencies ;-p.
@@ -158,7 +158,7 @@ for i in {1..30}; do echo -n "-"; done; echo ""
 echo "Generate the main index with the full table listing..."
 for i in {1..30}; do echo -n "-"; done; echo ""
 
-java -jar $SchemeSpyJar -t pgsql -dp $PsqlDriverJar -db $DB -u $DBUSER -p $DBPASS -hostOptionalPort localhost -template ./main_template -o $outDir -s chado
+java -jar $SchemeSpyJar -t pgsql -dp $PsqlDriverJar -db $DB -u $DBUSER -p $DBPASS -hostOptionalPort localhost -template ./build/main_template -o $outDir -s chado
     
 ##=====================================
 ## Generate Docs for each module.
@@ -181,5 +181,5 @@ for module in "${modules[@]}"; do
     mkdir -p "$outDir/$module"
     
     ## Generate the module-specific docs
-    java -jar $SchemeSpyJar -t pgsql -dp $PsqlDriverJar -db $DB -u $DBUSER -p $DBPASS -hostOptionalPort localhost -template ./module_template -o $outDir/$module -s $module
+    java -jar $SchemeSpyJar -t pgsql -dp $PsqlDriverJar -db $DB -u $DBUSER -p $DBPASS -hostOptionalPort localhost -template ./build/module_template -o $outDir/$module -s $module
 done
